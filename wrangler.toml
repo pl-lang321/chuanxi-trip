@@ -1,0 +1,7 @@
+name = "chuanxi-trip"
+compatibility_date = "2025-04-01"
+
+# 纯静态资源托管：public 目录下的文件直接对外提供
+# index.html 会自动成为根路径 /
+[assets]
+directory = "./public"

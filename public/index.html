@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f2eee6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151419" media="(prefers-color-scheme: dark)">
+<meta name="description" content="川西小环线电车自驾手册 · 9月29日晚重庆出发 — 10月3日返渝">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>川西小环线 · 电车自驾手册（9/29晚 – 10/3）</title>
+<style>
+:root{
+  --bg:#f2eee6; --bg2:#eae4d9; --card:#fffdf8; --ink:#211f1b; --ink2:#4a453e;
+  --muted:#7d756a; --line:#dfd7c8; --line2:#ebe4d8;
+  --accent:#2f7a5f; --accent-soft:#e4f0e9;
+  --warn:#b3401f; --warn-soft:#fbe9e1;
+  --gold:#9c7418; --gold-soft:#f7efdb;
+  --chip:#f1eadd;
+  --d0:#5d7f96; --d1:#2f8f76; --d2:#d2802a; --d3:#7b5aa6; --d4:#c14a3c;
+  --shadow:0 1px 2px rgba(60,45,25,.06),0 6px 18px rgba(60,45,25,.07);
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#151419; --bg2:#101015; --card:#1e1d23; --ink:#eeeae3; --ink2:#cfc9c0;
+    --muted:#9a948b; --line:#2e2c35; --line2:#26242c;
+    --accent:#67c2a1; --accent-soft:#1d2e28;
+    --warn:#e2835c; --warn-soft:#33211a;
+    --gold:#dcae57; --gold-soft:#2d2517;
+    --chip:#27252d;
+    --d0:#7fa3bb; --d1:#4fc39d; --d2:#e5a052; --d3:#a68dd6; --d4:#e3786a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  padding:0 0 40px;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:.2px}
+a{color:inherit}
+.sec{margin:22px 0 0}
+.sec-h{display:flex;align-items:baseline;gap:10px;margin:0 2px 10px}
+.sec-h .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:99px;padding:1px 8px}
+.sec-h .t{font-size:17px}
+.sec-h .s{font-size:12px;color:var(--muted);margin-left:auto}
+.card{background:var(--card);border:1px solid var(--line2);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+.hero{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line2);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.hero-top{padding:16px 16px 12px;border-bottom:1px dashed var(--line)}
+.brand{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.brand .dot{width:9px;height:9px;border-radius:99px;background:var(--accent)}
+.brand h1{font-size:18px}
+.brand .meta{font-size:12px;color:var(--muted);width:100%;font-variant-numeric:tabular-nums}
+.hero-body{padding:14px 16px 16px}
+.now-label{font-size:12px;color:var(--muted);letter-spacing:1px}
+.now-title{font-size:19px;margin:2px 0 2px;font-weight:700}
+.now-sub{font-size:13px;color:var(--ink2)}
+.cd{display:flex;gap:8px;margin:14px 0 10px}
+.cd .u{flex:1;background:var(--chip);border:1px solid var(--line2);border-radius:12px;padding:9px 4px 7px;text-align:center}
+.cd .v{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.5px;line-height:1.15}
+.cd .k{font-size:11px;color:var(--muted);margin-top:1px}
+.tzbox{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:9px;line-height:1.85}
+.tzbox b{color:var(--ink2);font-weight:600}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--muted);vertical-align:middle}
+
+.alerts{padding:12px 16px 16px;border-top:1px solid var(--line2);background:var(--warn-soft)}
+.alerts h3{font-size:13px;color:var(--warn);margin-bottom:6px;letter-spacing:.5px}
+.alerts ul{margin:0;padding-left:18px}
+.alerts li{font-size:13px;color:var(--ink2);margin:5px 0}
+.alerts li b{color:var(--ink)}
+
+.mapbox{padding:12px 12px 10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;padding:2px 4px 10px}
+.legend button{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--chip);color:var(--ink2);border-radius:99px;padding:3px 10px;cursor:pointer}
+.legend button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.legend .bar{width:12px;height:4px;border-radius:2px;display:inline-block;margin-right:5px;vertical-align:middle}
+svg.m{display:block;width:100%;height:auto;touch-action:manipulation}
+svg.m text{font-family:inherit}
+
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th,.tbl td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:top}
+.tbl th{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.3px}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .pri{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.tagneed{display:inline-block;font-size:11px;background:var(--warn-soft);color:var(--warn);border:1px solid var(--warn);border-radius:6px;padding:0 6px;margin-left:4px}
+.tagfree{display:inline-block;font-size:11px;background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:0 6px;margin-left:4px}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sub{font-size:12px;color:var(--muted);margin:0 0 8px 2px}
+
+.day{border:1px solid var(--line2);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px}
+.day-h{padding:12px 14px;border-left:6px solid var(--c);display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+.day-h .d{font-size:15px;font-weight:800}
+.day-h .nm{font-size:12px;color:var(--muted);width:100%}
+.day-h .r{font-size:13px;font-weight:600;width:100%}
+.day-tools{display:flex;gap:8px;flex-wrap:wrap;padding:0 14px 10px}
+.btn{font:inherit;font-size:13px;border-radius:10px;border:1px solid var(--line);background:var(--chip);color:var(--ink2);padding:6px 12px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.btn.p{color:#10231c}}
+.mapwrap{display:none;padding:0 12px 12px}
+.mapwrap.on{display:block}
+.mapwrap .inner{border:1px solid var(--line2);border-radius:12px;background:var(--bg2);padding:8px}
+.stops{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.stops .chip{font-size:12px;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:3px 9px;cursor:pointer;color:var(--ink2);text-decoration:none}
+.tl{padding:4px 0 0}
+.row{display:flex;gap:10px;padding:9px 14px;border-top:1px solid var(--line2)}
+.row:first-child{border-top:0}
+.row .tm{flex:0 0 58px;font-variant-numeric:tabular-nums;font-weight:700;font-size:13.5px;color:var(--accent);padding-top:1px}
+.row .bd{flex:1;min-width:0}
+.row .hd{font-weight:600}
+.row .nt{font-size:12.5px;color:var(--muted);margin-top:3px}
+.row .acts{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
+.row .acts .btn{padding:3px 9px;font-size:12px}
+.row.warnrow{background:var(--warn-soft)}
+.row.warnrow .tm{color:var(--warn)}
+.row.goldrow{background:var(--gold-soft)}
+.row.goldrow .tm{color:var(--gold)}
+
+.list{padding:6px 14px 12px;margin:0}
+.list li{font-size:13.5px;color:var(--ink2);padding:6px 0;border-bottom:1px dashed var(--line2);list-style:none;display:flex;gap:9px}
+.list li:last-child{border-bottom:0}
+.list .dl{flex:0 0 auto;font-size:11px;color:var(--warn);border:1px solid var(--warn);border-radius:6px;padding:0 6px;height:20px;line-height:18px;margin-top:2px;white-space:nowrap}
+.acc{margin-bottom:8px}
+.acc>summary{cursor:pointer;padding:12px 14px;font-weight:700;font-size:14.5px;list-style:none;display:flex;align-items:center;gap:8px}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary::after{content:"+";margin-left:auto;color:var(--muted);font-size:18px;line-height:1}
+.acc[open]>summary::after{content:"–"}
+.acc .bd{padding:0 14px 12px;border-top:1px solid var(--line2)}
+.acc .bd ul{margin:0;padding-left:18px}
+.acc .bd li{font-size:13.5px;color:var(--ink2);margin:5px 0}
+footer{font-size:12px;color:var(--muted);text-align:center;padding:22px 12px 0;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero card" id="hero">
+    <div class="hero-top">
+      <div class="brand">
+        <span class="dot"></span>
+        <h1>川西小环线 · 电车自驾手册</h1>
+        <span class="meta">3 人 · 乐道 L60 60kWh · 重庆出发 · 2026/9/29 晚 – 10/3</span>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="now-label">此刻关注 · 下一个行程节点</div>
+      <div class="now-title" id="nxTitle">—</div>
+      <div class="now-sub" id="nxSub">—</div>
+      <div class="cd" id="cd">
+        <div class="u"><div class="v" id="cdD">--</div><div class="k">天</div></div>
+        <div class="u"><div class="v" id="cdH">--</div><div class="k">时</div></div>
+        <div class="u"><div class="v" id="cdM">--</div><div class="k">分</div></div>
+        <div class="u"><div class="v" id="cdS">--</div><div class="k">秒</div></div>
+      </div>
+      <div class="tzbox" id="tzbox">—</div>
+    </div>
+    <div class="alerts">
+      <h3>出发前先读完这 5 条（我为这些改动了你的原计划）</h3>
+      <ul>
+        <li><b>不建议「重庆通宵直达猫鼻梁」。</b>约 520km 通宵 + 凌晨抵达海拔 3,660m 后在近零度的车里等 4 小时日出，当天还要玩双桥沟再开 128km 到丹巴。改成 <b>9/29 晚住都江堰睡 3–4 小时、9/30 凌晨 3:30 出发</b>——日出一样赶得上，风险少一半。</li>
+        <li><b>甲根坝 B 线正在封路施工。</b>S569 甲根坝镇→贡嘎山镇段：2026-05-11 至 12-31，每日 8:00–12:00、14:00–19:00 禁止一切车辆通行，K16+000–K54+000 全封闭（雅哈垭口方向也在内）。唯一进入窗口是 <b>8:00 前</b>，撤离窗口 <b>12:00–14:00</b>。</li>
+        <li><b>10/3 必须到重庆，是全程最大的硬约束。</b>康定→重庆约 660km，正常 7.5 小时，国庆预计 10–12 小时。所以 Day3 晚上必须住 <b>康定</b>（不是甲根坝、也不是新都桥），并放弃提弄秘境这类耗时项。</li>
+        <li><b>60kWh 版跑不了「重庆→都江堰」一整段。</b>约 405km，而实测高速续航约 420km（常温空载条件）。9/29 晚必须中途补一次；每天出发前补到 90%+。</li>
+        <li><b>需要提前预约的只有双桥沟。</b>官方「阿坝旅游」实名分时购票、国庆限流。亚拉雪山若自驾入园需提前 1 天线上预订且每日限 20 台车。中路藏寨、猫鼻梁、红海子、木雅大寺、姑弄村均免费且无需预约。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="n">02</span><span class="t">行程总览地图</span><span class="s">点上方色条跳到那天</span></div>
+    <div class="card mapbox">
+      <div class="legend" id="ovLegend"></div>
+      <div id="ovMap"></div>
+      <div class="tzbox" style="border-top:1px dashed var(--line);margin-top:8px;padding-top:8px">
+        <span class="pill">手绘示意图 · 非真实路网</span>　实际路线以高德导航为准。重庆—都江堰、成都—重庆两段高速在图幅之外，见每天的当日路线图。虚线为 Day3 的方案B。
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="n">03</span><span class="t">门票 / 酒店</span><span class="s">公开页面不含确认号、证件号、房号</span></div>
+    <div class="card" style="padding:12px 12px 8px">
+      <p class="sub">门票与收费项目（价格以购票当日官方页面为准）</p>
+      <div class="scrollx">
+        <table class="tbl">
+          <thead><tr><th>项目</th><th class="pri">价格</th><th>预约</th><th>说明</th></tr></thead>
+          <tbody id="ticketRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card" style="padding:12px 12px 8px;margin-top:12px">
+      <p class="sub">住宿（地点、海拔、到店日期已确定）</p>
+      <div class="scrollx">
+        <table class="tbl">
+          <thead><tr><th>到店日期</th><th>住宿地</th><th class="pri">海拔</th><th>酒店 / 地址 / 电话</th></tr></thead>
+          <tbody id="hotelRows"></tbody>
+        </table>
+      </div>
+      <p class="sub" style="margin-top:10px">具体酒店名、地址、电话，在你把订单截图发来后由我补进这里（<b>不要</b>把确认号、证件号、房号发到这个公开页面上）。</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="n">04</span><span class="t">逐日行程</span><span class="s">全程北京时间 UTC+8</span></div>
+    <div id="days"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="n">05</span><span class="t">待办清单</span><span class="s">办完一项告诉我，我改页面</span></div>
+    <div class="card">
+      <ul class="list" id="todo"></ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="n">06</span><span class="t">实用贴士</span></div>
+    <div id="tips"></div>
+  </section>
+
+  <footer>
+    全程时间为北京时间 UTC+8，页面同时换算成你当前所在时区 · 点任意地名即唤起高德地图导航 · 本页零外部依赖，断网可用
+  </footer>
+</div>
+
+<script>
+var P = {
+  cq  :{n:'重庆市',      lon:106.5516,lat:29.5630,alt:250},
+  sn  :{n:'遂宁市',      lon:105.5893,lat:30.5359,alt:300},
+  cd  :{n:'成都市',      lon:104.0665,lat:30.5728,alt:500},
+  dy  :{n:'都江堰市',    lon:103.6143,lat:30.9965,alt:700},
+  yx  :{n:'映秀镇',      lon:103.4863,lat:31.0565,alt:900},
+  wl  :{n:'卧龙镇',      lon:103.1978,lat:31.0422,alt:1900},
+  bls :{n:'巴朗山隧道',  lon:102.8756,lat:30.9397,alt:3850},
+  mbl :{n:'猫鼻梁观景台',lon:102.8424,lat:30.9890,alt:3660},
+  sg  :{n:'四姑娘山镇',  lon:102.8309,lat:30.9956,alt:3200},
+  sqg :{n:'双桥沟沟口',  lon:102.7679,lat:30.9818,alt:2900},
+  nyb :{n:'撵鱼坝',      lon:102.7703,lat:31.1487,alt:3700},
+  zgn :{n:'珠嘎纳措',    lon:102.7556,lat:31.1845,alt:3800},
+  bdl :{n:'布达拉峰',    lon:102.7640,lat:31.2063,alt:3900},
+  xj  :{n:'小金县城',    lon:102.3582,lat:30.9994,alt:2360},
+  db  :{n:'丹巴县城',    lon:101.8833,lat:30.8793,alt:1860},
+  zl  :{n:'中路藏寨',    lon:101.9375,lat:30.8932,alt:2250},
+  bm  :{n:'八美镇',      lon:101.4817,lat:30.4858,alt:3450},
+  hys :{n:'惠远寺',      lon:101.4932,lat:30.5645,alt:3500},
+  msg :{n:'墨石公园景区',lon:101.5417,lat:30.4496,alt:3500},
+  gn  :{n:'姑弄村',      lon:101.5165,lat:30.3556,alt:3600},
+  tg  :{n:'塔公镇',      lon:101.5230,lat:30.3193,alt:3730},
+  myd :{n:'木雅大寺',    lon:101.5264,lat:30.3234,alt:3750},
+  blsd:{n:'八郎生都村',  lon:101.4580,lat:30.3303,alt:3800},
+  ylx :{n:'亚拉雪山景区',lon:101.6191,lat:30.5292,alt:4000},
+  xdq :{n:'新都桥镇',    lon:101.4918,lat:30.0467,alt:3300},
+  jgb :{n:'甲根坝镇',    lon:101.5570,lat:29.8465,alt:3200},
+  tiw :{n:'提吾村',      lon:101.5575,lat:29.8275,alt:3250},
+  rit :{n:'日头村',      lon:101.5461,lat:29.8156,alt:3300},
+  nti :{n:'纳梯村',      lon:101.6084,lat:29.7455,alt:3450},
+  tln :{n:'提弄秘境',    lon:101.6138,lat:29.7730,alt:4580},
+  hhz :{n:'红海子',      lon:101.7754,lat:30.1843,alt:4100},
+  zgw :{n:'中谷温泉村',  lon:101.8717,lat:30.2653,alt:3100},
+  kd  :{n:'康定市',      lon:101.9546,lat:30.0003,alt:2560},
+  ld  :{n:'泸定县',      lon:102.2314,lat:29.9146,alt:1330},
+  tq  :{n:'天全县',      lon:102.7605,lat:30.0643,alt:800},
+  ya  :{n:'雅安市',      lon:103.0402,lat:30.0131,alt:600}
+};
+
+var TICKETS = [
+  ['双桥沟（四姑娘山）','150 元/人','need','门票 80 + 观光车 70（旺季 4/1–11/30）。<b>需提前实名分时预约</b>，官方渠道「阿坝旅游」小程序 / sgns.cn，国庆限流，请一次订好 3 人同一时段。三条沟独立售票，互不通用。'],
+  ['亚拉雪山景区','150 元/人','need','门票 + 往返观光车联票。旺季 08:30–17:30，<b>15:30 停止售票并截止入园</b>；自驾入园票须<b>提前 1 天线上预订</b>，每日限 20 台车。本次行程塞不进完整的 3 小时，如需加入请看 Day2 备注。'],
+  ['墨石公园景区','以现场为准','-','Day2 途经，含观光车约 1.5–2 小时。省时替代：<b>小墨石公园</b>（免费，高德搜「卡玛桥」）。'],
+  ['中路藏寨','免费','free','全天开放，无需预约。爬古碉楼约 10 元/人。清晨 6:30–8:00 的晨雾配墨尔多神山最好看。'],
+  ['猫鼻梁观景台','免费','free','路边观景台，无需预约。车位很少，节假日停车靠运气，看到就走。'],
+  ['木雅大寺 / 塔公寺','免费 / 随喜','free','无需预约。木雅大寺可与岩羊、盘羊近距离接触，请勿自带食物投喂。'],
+  ['红海子','免费','free','S434 路边高山湖，无需预约。海拔约 4,100m，下车请慢走。'],
+  ['提弄秘境','20–25 元/人清洁费','need','村民设卡收取，无正式票务。<b>不建议本次行程前往</b>：需先穿过 S569 施工管制段，之后还有 12km 非铺装临崖路升至 4,580m，全程无信号，往返至少 2 小时。']
+];
+
+var HOTELS = [
+  ['9/29 周二 晚','都江堰市','700m','请发订单截图给我'],
+  ['9/30 周三 晚','丹巴县城','1,860m','请发订单截图给我'],
+  ['10/1 周四 晚','新都桥镇','3,300m','请发订单截图给我'],
+  ['10/2 周五 晚','康定市','2,560m','请发订单截图给我 —— 优先选可充电 / 附近有蔚来换电站的酒店']
+];
+
+var TODO = [
+  ['9/28 前','订 9/30 双桥沟实名分时票（3 人同一时段），截图发我填进页面'],
+  ['9/28 前','三人健康确认：近期有无感冒发烧、严重高血压、心脏病 —— 有则不要上 3,700m 以上'],
+  ['9/28 前','把 4 晚酒店订单截图发我（房型、地址、电话）'],
+  ['9/29 白天','胎压、备胎、低温玻璃水、雨刮、刹车检查一遍；拖车绳 + 搭电线装车'],
+  ['9/29 白天','出发前补到 100%；把本页每个地点都在导航里点一遍，并下载离线地图（很多路段无信号）'],
+  ['9/29 白天','换适量现金零钱（部分停车场无信号只收现金）'],
+  ['10/1 晚','向新都桥民宿确认次日 S569 甲根坝 B 线是否放行 —— 不通就走 Day3 方案B'],
+  ['每天','电量低于 40% 就补，别等 20%；优先蔚来 / 乐道换电站（3 分钟），无站再快充'],
+  ['随时','办完一项告诉我，我直接改页面 —— 不做勾选框，勾选只存在各自浏览器里，多人看到的不一样']
+];
+
+var TIPS = [
+  {t:'电车专属 · 60kWh 的补能纪律', open:true, b:[
+    '参考数据：常温综合 490–520km、全程高速约 420km、低温或高原再打 7–8 折。三人 + 满后备厢 + 一天爬升 3,000m 时要按 6 折算。',
+    '每天必补的点：都江堰（进山前）→ 四姑娘山镇（蔚来换电站「阿坝小金县四姑娘山」）→ 丹巴 → 新都桥 → 康定（川西换电环线已贯通，平均约 110km 一座）→ 天全服务区 → 成都。',
+    '爬坡最费电：都江堰 700m → 巴朗山 3,850m 是全程能耗最高的一段，出发前必须在都江堰补到 90% 以上。',
+    '反过来，小金→丹巴、康定→成都都是净下坡，实际掉电会比车机预估少，可以理性一点。',
+    '节假日服务区排队严重：先用 App 看桩位 / 换电站排队数，宁可多绕 5 公里，也不要在只剩 15% 时找桩。',
+    '夜间补电安排在当晚住宿地（丹巴 / 新都桥 / 康定），白天的时间留给风景。'
+  ]},
+  {t:'高反与身体（这条最重要）', b:[
+    '海拔台阶是刻意安排的：都江堰 700m → 丹巴 1,860m → 新都桥 3,300m → 康定 2,560m。Day2 住新都桥而非塔公 3,730m，睡眠差别很大。',
+    'Day1 凌晨会快速升到巴朗山 3,850m，不要在垭口久留、不要下车跑跳，拍照慢走。',
+    '红景天需提前 3–5 天开始吃；高原安到高原后按说明服；葡萄糖口服液随手备着；布洛芬治高反头痛最有效。',
+    '红线：持续头痛 + 呕吐 + 走路打晃，立刻下撤到低海拔（丹巴方向），不要硬扛着看日出。',
+    '高原不喝酒、不暴饮暴食、睡前别洗太热的热水澡；当天有症状就不要继续爬升。'
+  ]},
+  {t:'衣物与装备', b:[
+    '冲锋衣 + 抓绒内胆 / 薄羽绒服：四姑娘山、塔公、甲根坝早晚接近 0℃，白天出太阳可能只需单衣。',
+    '速干长袖优先，不建议纯棉（出汗湿了会很冷）。',
+    '保暖帽 + 手套（看日出日落必备）、墨镜（高原紫外线极强、防雪盲）、防晒 SPF50+、润唇膏、保湿面霜。',
+    '舒适防滑运动鞋；若要走碎石观景点位需高帮徒步鞋。',
+    '保温杯必带；零食与矿泉水备足，部分路段完全没有商店；带几个车载垃圾袋。'
+  ]},
+  {t:'证件与电子', b:[
+    '三人的身份证（景区实名必用）、驾驶证、行驶证。',
+    '充电宝、数据线、车载快充头。',
+    '手机提前下载离线地图，并把本页「添加到主屏幕」—— 很多路段完全没有信号。'
+  ]},
+  {t:'车辆与驾驶', b:[
+    '连续驾驶不超过 4 小时，每 2 小时至少下车活动 10 分钟；山路弯道多，控制车速、靠右会车。',
+    '10/1 是国庆出城最高峰（8:00–12:00）。我们这天在山里横向移动，8:30 前上路基本能避开主流车流。',
+    'Day2 的八郎生都村 → 新都桥是全程唯一的计划夜路（约 46km 山路），务必慢开、注意路面牲畜。',
+    '高速免费：10 月 1 日 0 时 – 10 月 7 日 24 时，以<b>驶离出口</b>时间为准。9/29 出发那一段正常缴费，10/3 返程全程免费。'
+  ]}
+];
+
+var EVENTS = [
+  {t:'2026-09-29T18:00:00+08:00', n:'出发：重庆 → 都江堰', s:'渝蓉高速 / 成渝环线 · 约 405km · 中途补电一次'},
+  {t:'2026-09-30T03:30:00+08:00', n:'出发：都江堰 → 猫鼻梁', s:'凌晨山路 · 卧龙 · 巴朗山隧道'},
+  {t:'2026-09-30T07:03:00+08:00', n:'猫鼻梁 · 四姑娘山日照金山', s:'日出 07:03 · 建议 06:20 前到位'},
+  {t:'2026-09-30T09:00:00+08:00', n:'双桥沟入园（需提前预约）', s:'门票 80 + 观光车 70 · 凭身份证验票'},
+  {t:'2026-10-01T06:40:00+08:00', n:'中路藏寨 · 白塔观景台', s:'日出 07:07 · 晨雾 + 墨尔多神山'},
+  {t:'2026-10-01T17:45:00+08:00', n:'八郎生都村 · 雅拉雪山日落', s:'日落 19:00 · 提前 1 小时占位'},
+  {t:'2026-10-02T06:40:00+08:00', n:'甲根坝 B 线：进入截止时间', s:'必须 8:00 前通过 S569 卡点，否则改走 Day3 方案B'},
+  {t:'2026-10-02T18:00:00+08:00', n:'抵达康定 · 换电 + 早睡', s:'次日 660km 返渝，前一夜必须住康定'},
+  {t:'2026-10-03T06:00:00+08:00', n:'出发：康定 → 成都 → 重庆', s:'约 660km · 国庆预计 10–12 小时'},
+  {t:'2026-10-03T18:00:00+08:00', n:'预计抵达重庆', s:'不含事故级堵车，以实际路况为准'}
+];
+
+var DAYS = [
+{
+  id:0, c:'--d0', date:'9月29日 周二', title:'重庆 → 都江堰（先歇脚，别硬熬）',
+  meta:'约 405km · 纯驾驶约 4h20m · 夜宿都江堰 700m',
+  via:'cd', from:'cq', dest:'dy',
+  route:['cq','cd','dy'], labels:['cq','dy'],
+  rows:[
+    ['17:30','出发准备 · 重庆','先检查再装车：三人身份证 / 驾驶证 / 行驶证、胎压、低温玻璃水、雨刮、刹车。<b>电量补到 100%</b>。',[],''],
+    ['18:00','重庆出发','走渝蓉高速 / 成渝环线。今晚的目标是都江堰，<b>不是猫鼻梁</b>。',['dy'],''],
+    ['20:40','遂宁一带补能','约 200km 处补一次。<b>60kWh 版不可能一口气开到都江堰再进山</b>——实测高速续航约 420km，还是在常温空载条件下。900V 快充 10%→80% 约 25 分钟，遇换电站更快。',['sn'],''],
+    ['23:30','抵达都江堰入住','海拔约 700m。洗漱、睡觉——哪怕只睡 3 小时，也比在 3,660m 的车里坐到天亮有用。',['dy'],''],
+    ['—','为什么没按你说的「通宵直达猫鼻梁」','重庆 250m → 猫鼻梁 3,660m，一夜之内拔升 3,400m 且零睡眠；凌晨抵达后要在近零度的车上等 4 小时到日出，接着当天还要玩 4 小时双桥沟、再开 128km 山路到丹巴。拿三个人的安全换两小时的「不用倒车」，不划算。<br><b>改法：</b>都江堰睡到 03:00 → 03:30 出发 → 06:20 到猫鼻梁 → 07:03 日出，照样看得上，只多出都江堰一晚房费。如果你坚持通宵：务必两人轮换驾驶、凌晨在都江堰服务区睡 90 分钟、到达后不要立刻睡着（高反易在睡眠中加重）。',[],'warn']
+  ]
+},
+{
+  id:1, c:'--d1', date:'9月30日 周三', title:'都江堰 → 猫鼻梁 → 双桥沟 → 丹巴',
+  meta:'约 290km · 纯驾驶约 6h · 夜宿丹巴 1,860m（全程最低的一晚）',
+  via:'sqg', from:'dy', dest:'db',
+  route:['dy','yx','wl','bls','mbl','sg','sqg','sg','xj','db'],
+  labels:['dy','mbl','sg','sqg','db'],
+  rows:[
+    ['03:00','起床','行李昨晚已装好。出发前在都江堰<b>补电 / 换电到 90% 以上</b>——进山后到四姑娘山镇之前没有可靠快充。',[],''],
+    ['03:30','出发','都江堰 → 都汶高速 → 映秀 → G350 熊猫大道 → 卧龙。',['dy','mbl'],''],
+    ['04:00','映秀','约 19km 高速，凌晨车极少。',['yx'],''],
+    ['04:50','卧龙镇','进入峡谷路段，注意落石，偶有施工单边放行，留出缓冲。',['wl'],''],
+    ['05:50','巴朗山隧道','约 3,850m，是今天海拔最高点。隧道口可能结冰或排队，<b>不要在垭口久留、别跑跳</b>，直接通过。',['bls'],''],
+    ['06:20','猫鼻梁观景台','海拔约 3,660m。下车前先把厚衣服穿上，早上接近 0℃。',['mbl'],''],
+    ['07:03','日出 · 四姑娘山日照金山','大峰 / 二峰 / 三峰 / 幺妹峰。免费观景台，节假日车位紧张，看完就走。',[],''],
+    ['07:50','下山 → 四姑娘山镇','早餐补热量，顺手把今天的门票订单在手机上打开备查。',['sg'],''],
+    ['09:00','双桥沟入园','<b>门票 80 + 观光车 70 = 150 元/人，需提前实名分时预约。</b>沟长约 30km，观光车单程约 40 分钟到沟尾布达拉峰，回程逐站下车。重点留：<b>珠嘎纳措</b>（雪山倒影，观光车只上不下，回程时下）和 <b>撵鱼坝</b>（森林草甸，5–11 月可体验高山漂流）；隆珠措、人参果坪可直接跳过，省 1–1.5 小时。',['sqg','zgn','nyb'],'need'],
+    ['12:30','出沟 · 镇上午餐','吃饭同时<b>补能</b>：蔚来换电站「阿坝小金县四姑娘山」，无位就快充。别空着电跑后面的山路。',['sg'],''],
+    ['14:00','出发 → 小金 → 丹巴','约 128km，3–3.5 小时。出四姑娘山镇后经小金县城南下，整体是缓下坡，掉电比车机预估少。',['db'],''],
+    ['17:30','抵达丹巴县城','海拔 1,860m，是这一趟<b>海拔最低的过夜点</b>，好好睡一觉比什么都重要。',['db'],''],
+    ['20:00','晚餐 + 早睡','明天是全程最赶的一天：200km 山路 + 两个日出日落的节点。',[],'']
+  ]
+},
+{
+  id:2, c:'--d2', date:'10月1日 周四（国庆首日）', title:'丹巴 → 中路 → 八美 → 惠远寺 → 墨石 → 姑弄 → 八郎生都 → 新都桥',
+  meta:'约 200km · 纯驾驶约 5h · 夜宿新都桥 3,300m',
+  via:'hys', from:'db', dest:'xdq',
+  route:['db','zl','db','bm','hys','bm','msg','gn','tg','blsd','xdq'],
+  labels:['zl','bm','hys','msg','blsd','xdq'],
+  rows:[
+    ['06:00','起床','今天是 10 月 1 日，出城与景区车流全年最高峰。<b>8:30 前上路</b>是对抗拥堵的唯一办法。',[],''],
+    ['06:20','→ 中路藏寨','9km 盘山路，约 25 分钟。',['zl'],''],
+    ['06:40','白塔观景台 · 日出 07:07','<b>免费、全天开放、无需预约。</b>晨雾中的墨尔多神山 + 88 座古碉楼，爬碉楼约 10 元/人。控制在 1 小时内。',['zl'],'free'],
+    ['08:00','返回丹巴，开始今日主线','（如果 Day1 傍晚已经去过中路，这里可以睡到 7 点、8:30 再出发。）',['db'],''],
+    ['08:30','丹巴 → G350 → 八美','约 85km，2 小时。中途翻疙瘩梁子垭口，注意会车与背阴处暗冰。',['bm'],''],
+    ['10:30','八美镇','海拔 3,450m。北上 13km 去惠远寺，来回约 40 分钟。',['bm'],''],
+    ['11:10','惠远寺','莲花盆地里的格鲁派皇家古寺，红墙白塔，几乎没有旅行团。停留 40 分钟，未经允许不要对着僧人和殿内拍照。',['hys'],''],
+    ['12:00','回八美镇午餐','这顿要解决掉——后面一直到新都桥没有靠谱饭点。',['bm'],''],
+    ['13:15','墨石公园景区','门票 + 观光车，约 1.5–2 小时。<b>时间紧就换「小墨石公园」，高德搜「卡玛桥」，免费。</b>',['msg'],''],
+    ['—','关于亚拉雪山（你原计划里的可选项）','进景区约需 3 小时，且 <b>15:30 停止售票与入园</b>，今天的时间表塞不下。要它就必须砍掉惠远寺 + 墨石中的一个；另外自驾入园票需<b>提前 1 天线上预订</b>、每日限 20 台车。我的建议是<b>本次跳过</b>，留给下一次的两日行程。',['ylx'],'warn'],
+    ['15:15','→ 姑弄村','17km，约 30 分钟。',['gn'],''],
+    ['15:45','姑弄村','路边观景，<b>10–20 分钟就够，不要久留</b>。',['gn'],'free'],
+    ['16:15','塔公 / 木雅大寺（可选）','就在塔公镇旁，30 分钟。今天去就不用 Day3 再走回头路了。',['tg','myd'],'free'],
+    ['17:15','→ 八郎生都村','约 10km。今天唯一的夜路段在日落之后，所以这段必须按时出发。',['blsd'],''],
+    ['17:45','就位，等日落','经幡 + 转经筒配夕阳，东侧就是雅拉雪山。日落前光线最好，早点到能占到好机位。',[],''],
+    ['19:00','日落 · 雅拉雪山日照金山','当地日落约 19:00。拍完立刻上车，不要在营地拖延。',['blsd'],''],
+    ['19:40','→ 新都桥','约 46km，山路夜行约 1 小时 10 分，慢开、注意路面牲畜。',['xdq'],''],
+    ['21:00','抵达新都桥 · 补能','海拔 3,300m。尽量在住宿地补电（附近最可靠的是带蔚来桩的酒店）。<b>补到 90%+，明天要翻折多山。</b>',['xdq'],'']
+  ]
+},
+{
+  id:3, c:'--d3', date:'10月2日 周五', title:'新都桥 → 甲根坝 B 线 / S434 → 康定（必须住康定）',
+  meta:'约 220km · 纯驾驶约 5h · 夜宿康定 2,560m · 今天给两套方案',
+  via:'jgb', from:'xdq', dest:'kd',
+  route:['xdq','jgb','tiw','rit','nti','tln','jgb','xdq','kd'],
+  labels:['xdq','jgb','nti','hhz','kd'],
+  rows:[
+    ['—','先读这条：今晚必须住康定','因为明天 10/3 要跑 660km 回重庆。<b>如果把今晚留给甲根坝或新都桥，明天就要额外加 2–3 小时山路，凌晨出发都可能到不了。</b>下面的方案A 已经把这个约束算进去了。',[],'warn'],
+    ['05:00','起床 · 方案A（去甲根坝 B 线）','早起是为了抢在封路之前。若前一晚确认 S569 仍在管制、或你不想这么早走，直接跳到本页最后的<b>方案B</b>。',[],''],
+    ['05:30','新都桥 → 甲根坝','约 34km，1 小时。',['jgb'],''],
+    ['06:40','进 B 线 · 必须在 8:00 前通过卡点','<b>S569 甲根坝镇→贡嘎山镇段施工管制：2026-05-11 至 12-31，每日 8:00–12:00、14:00–19:00 禁止一切车辆通行，K16+000–K54+000 全封闭。</b>结论：<b>8 点前进、12–14 点撤</b>，其余时间一动不能动。',['jgb'],'warn'],
+    ['07:00','B 线村落：提吾 → 日头 → 纳梯','提吾村（2km）、日头村（双子古碉，半山腰俯瞰河谷）、纳梯村（约 20km 田园），全部免费。<b>不要深入提弄秘境</b>：过卡点后还有 12km 非铺装临崖路升到 4,580m，电车自重两吨多，往返至少 2 小时且无信号。',['tiw','rit','nti'],'free'],
+    ['12:00','撤离窗口 12:00–14:00','这是今天唯一能合法开出来的窗口，下午还有 3 小时山路要去康定。别贪。',[],'warn'],
+    ['14:00','甲根坝 → 新都桥 → 折多山 → 康定','约 134km，3 小时。折多山垭口有观景台，停一次多 20 分钟，自行取舍。',['kd'],''],
+    ['17:30','抵达康定 · 补能 / 换电','海拔 2,560m。川西换电环线已覆盖康定，优先换电；同时把车充满、人吃饱。',['kd'],''],
+    ['21:00','早睡','明天 660km，早上 6 点出门。',[],''],
+    ['—','方案B · 不去甲根坝（多睡 3 小时，观景更好）','08:00 新都桥 → 塔公 / 木雅大寺（45km，1 小时，免费）→ S434 经雅拉山口 → <b>红海子</b>（约 50km，1.5 小时，免费，雪山倒影）→ 中谷温泉村（泡温泉，可选）→ 17:00 抵达康定。好处是把 S434 放在白天走，返程日完全专注赶路。',['myd','hhz','zgw','kd'],'gold']
+  ]
+},
+{
+  id:4, c:'--d4', date:'10月3日 周六', title:'康定 → 成都 → 重庆',
+  meta:'约 660km · 正常 7.5h · 国庆预计 10–12h · 06:00 出发',
+  via:'cd', from:'kd', dest:'cq',
+  route:['kd','ld','tq','ya','cd','sn','cq'], labels:['kd','tq','cd','cq'],
+  rows:[
+    ['05:30','起床 · 行李装车','出发前确认充电装备和证件都没落在酒店。',[],''],
+    ['06:00','出发 · 雅康高速','今天几乎全程高速，仍要趁早：康定到成都这段是国庆返程的重点堵段之一。',['kd','cq'],''],
+    ['07:00','天全服务区 · 补能 + 早餐','约 35 分钟。<b>国庆服务区排队严重，别拖到剩 15% 才找桩</b>；电够也建议在这里活动 10 分钟。',['tq'],''],
+    ['10:00','成都 · 补电 ','<b>必须补</b>：成都→重庆约 330km，高速工况要吃掉约 47kWh，60kWh 版跑完基本见底。顺便吃午饭，控制在 40 分钟内。',['cd'],''],
+    ['10:50','成都 → 重庆','走渝蓉高速 G5013，约 330km，正常 3.5 小时。',['cq'],''],
+    ['14:30','抵达重庆（正常情况）','不含堵车。<b>国庆返程 +3～5 小时</b>，实际到家预计 17:00–19:00，遇到事故还可能更晚。',[],''],
+    ['—','高速免费','10 月 1 日 0 时 – 10 月 7 日 24 时，以<b>驶离出口</b>时间为准，今天全程免费。（9/29 出发那一段是正常缴费的。）',[],'gold']
+  ]
+}
+];
+
+/* ---------- 工具 ---------- */
+function pad(n){return n<10?'0'+n:''+n;}
+function fmtCN(ms,offMin){
+  var d=new Date(ms+offMin*60000);
+  return (d.getUTCMonth()+1)+'月'+d.getUTCDate()+'日 '+pad(d.getUTCHours())+':'+pad(d.getUTCMinutes());
+}
+function localTZLabel(){
+  try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'本机时区'; }catch(e){ return '本机时区'; }
+}
+function nav(a,b,c){
+  return 'https://uri.amap.com/navigation?mode=car&policy=1&src=chuanxi&coordinate=wgs84&callnative=1'
+    + (a?'&from='+P[a].lon+','+P[a].lat+','+encodeURIComponent(P[a].n):'')
+    + '&to='+P[b].lon+','+P[b].lat+','+encodeURIComponent(P[b].n)
+    + (c?'&via='+P[c].lon+','+P[c].lat+','+encodeURIComponent(c?P[c].n:'')+'':'');
+}
+function to(k){ return nav(null,k); }
+function cssv(v){
+  var x=getComputedStyle(document.documentElement).getPropertyValue(v);
+  return (x&&x.trim())?x.trim():'#888';
+}
+function themeColors(){
+  return {card:cssv('--card'),ink:cssv('--ink'),muted:cssv('--muted'),gold:cssv('--gold'),line:cssv('--line2')};
+}
+
+/* ---------- 倒数 ---------- */
+function pickNext(){
+  var now=Date.now();
+  for(var i=0;i<EVENTS.length;i++){ if(Date.parse(EVENTS[i].t)>now) return {e:EVENTS[i],i:i}; }
+  return null;
+}
+function tick(){
+  var nx=pickNext(), box=document.getElementById('cd');
+  var t=document.getElementById('nxTitle'), s=document.getElementById('nxSub'), tz=document.getElementById('tzbox');
+  var nowT=Date.now(), off=-new Date(nowT).getTimezoneOffset(), sign=off>=0?'+':'-';
+  var ah=Math.abs(Math.floor(off/60)), am=Math.abs(off%60);
+  if(!nx){
+    t.textContent='行程已结束';
+    s.textContent='安全到家，缓两天再整理照片。';
+    box.style.display='none';
+  }else{
+    var e=nx.e, target=Date.parse(e.t), gap=target-nowT;
+    t.textContent=e.n;
+    s.textContent=e.s+'　·　第 '+(nx.i+1)+'/'+EVENTS.length+' 个节点';
+    document.getElementById('cdD').textContent=Math.floor(gap/86400000);
+    document.getElementById('cdH').textContent=Math.floor(gap%86400000/3600000);
+    document.getElementById('cdM').textContent=Math.floor(gap%3600000/60000);
+    document.getElementById('cdS').textContent=Math.floor(gap%60000/1000);
+  }
+  var same=(off===480);
+  var line='<b>现在</b>　北京时间 '+fmtCN(nowT,480)+'（UTC+8） · 你所在时区 '+fmtCN(nowT,off)+'（UTC'+sign+pad(ah)+':'+pad(am)+'，'+localTZLabel()+'）'
+    +(same?'':'　<b>你当前不在北京时区</b>，页面已把 UTC+8 的原定时间换算成你的本地时间');
+  if(nx){
+    var target2=Date.parse(nx.e.t);
+    line+='<br><b>'+nx.e.n+'</b>　北京时间 '+fmtCN(target2,480)+' · 你所在时区 '+fmtCN(target2,off)
+        +'　剩余 '+Math.floor((target2-nowT)/3600000)+' 小时 '+Math.floor((target2-nowT)%3600000/60000)+' 分';
+  }
+  tz.innerHTML=line;
+}
+
+/* ---------- 地图 ---------- */
+function fitBox(keys,pad){
+  var lo=999,hi=-999,la=999,ha=-999,found=false;
+  for(var i=0;i<keys.length;i++){
+    var p=P[keys[i]]; if(!p) continue; found=true;
+    lo=Math.min(lo,p.lon); hi=Math.max(hi,p.lon);
+    la=Math.min(la,p.lat); ha=Math.max(ha,p.lat);
+  }
+  if(!found){lo=101.3;hi=104.2;la=29.6;ha=31.2;}
+  var latm=(la+ha)/2, kx=Math.cos(latm*Math.PI/180)*111.32, ky=110.57;
+  var spanX=Math.max(hi-lo,0.06), spanY=Math.max(ha-la,0.04);
+  lo-=spanX*pad; hi+=spanX*pad; la-=spanY*pad; ha+=spanY*pad;
+  var dx=(hi-lo)*kx, dy=(ha-la)*ky, asp=dx/dy, MIN=1.05, MAX=2.45;
+  if(asp>MAX){ var need=dx/MAX, add=(need-dy)/2/ky; la-=add; ha+=add; asp=MAX; }
+  else if(asp<MIN){ var need2=dy*MIN, add2=(need2-dx)/2/kx; lo-=add2; hi+=add2; asp=MIN; }
+  return {lo:lo,hi:hi,la:la,ha:ha,asp:asp};
+}
+function proj(box,W){
+  var H=Math.round(W/box.asp);
+  return {W:W,H:H,
+    x:function(lon){return (lon-box.lo)/(box.hi-box.lo)*W;},
+    y:function(lat){return (box.ha-lat)/(box.ha-box.la)*H;}};
+}
+function poly(keys,pr){
+  var d='',i2=0;
+  for(var i=0;i<keys.length;i++){
+    var p=P[keys[i]]; if(!p) continue;
+    d+=(i2?' L ':'M ')+pr.x(p.lon).toFixed(1)+' '+pr.y(p.lat).toFixed(1); i2++;
+  }
+  return d;
+}
+function drawMap(host,keysets,labelKeys,sleepKeys,W){
+  var all=[];
+  for(var i=0;i<keysets.length;i++) all=all.concat(keysets[i].route);
+  if(labelKeys) for(var j=0;j<labelKeys.length;j++){ if(all.indexOf(labelKeys[j])<0) all.push(labelKeys[j]); }
+  var box=fitBox(all,0.12), pr=proj(box,W), C=themeColors(), pre='mm'+W+'_'+Math.random().toString(36).slice(2,7);
+  var s='<svg class="m" viewBox="0 0 '+pr.W+' '+pr.H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="行程路线图">';
+  s+='<defs>';
+  for(var k=0;k<keysets.length;k++){
+    s+='<filter id="'+pre+k+'" x="-10%" y="-10%" width="120%" height="120%">'
+      +'<feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="'+(k*17+3)+'" result="n"/>'
+      +'<feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>'
+      +'</filter>';
+  }
+  s+='<clipPath id="'+pre+'c"><rect x="0" y="0" width="'+pr.W+'" height="'+pr.H+'"/></clipPath>';
+  s+='</defs><g clip-path="url(#'+pre+'c)">';
+  s+='<g fill="none" stroke="'+C.line+'" stroke-width="0.8">';
+  for(var q=0;q<8;q++){
+    var cx=pr.W*(0.1+0.115*q), cy=pr.H*(0.16+0.13*(q%3)), rr=24+q*13;
+    s+='<circle cx="'+cx.toFixed(0)+'" cy="'+cy.toFixed(0)+'" r="'+rr+'" opacity="0.5"/>';
+    s+='<circle cx="'+cx.toFixed(0)+'" cy="'+cy.toFixed(0)+'" r="'+(rr*0.58).toFixed(0)+'" opacity="0.35"/>';
+  }
+  s+='</g>';
+  for(var r=0;r<keysets.length;r++){
+    var ks=keysets[r], c=ks.color, d=poly(ks.route,pr);
+    if(!d) continue;
+    if(ks.dash){
+      s+='<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="9" opacity="0.12"/>';
+      s+='<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="2.6" stroke-dasharray="9 7" stroke-linecap="round" opacity="0.95" filter="url(#'+pre+r+')"/>';
+    }else{
+      s+='<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="10" opacity="0.12"/>';
+      s+='<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" filter="url(#'+pre+r+')"/>';
+      s+='<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="1" stroke-linecap="round" opacity="0.5"/>';
+    }
+  }
+  var nights=[['dy','9/29'],['db','9/30'],['xdq','10/1'],['kd','10/2']];
+  for(var u=0;u<nights.length;u++){
+    var p2=P[nights[u][0]]; if(!p2) continue;
+    var X=pr.x(p2.lon), Y=pr.y(p2.lat);
+    if(X<-40||X>pr.W+40||Y<-40||Y>pr.H+40) continue;
+    s+='<g stroke="'+C.gold+'" stroke-width="1.6" fill="'+C.card+'">'
+      +'<rect x="'+(X-8)+'" y="'+(Y+6)+'" width="16" height="13" rx="2"/>'
+      +'<path d="M '+(X-11)+' '+(Y+6)+' L '+X+' '+(Y-7)+' L '+(X+11)+' '+(Y+6)+' Z" fill="none"/>'
+      +'</g><text x="'+X+'" y="'+(Y+27)+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+C.gold+'" '
+      +'stroke="'+C.card+'" stroke-width="3" paint-order="stroke">'+nights[u][1]+' 住</text>';
+  }
+  var lk=labelKeys||all, seen={};
+  for(var v=0;v<lk.length;v++){
+    var key=lk[v], p3=P[key]; if(!p3||seen[key]) continue; seen[key]=1;
+    var X2=pr.x(p3.lon), Y2=pr.y(p3.lat);
+    if(X2<2||X2>pr.W-2||Y2<2||Y2>pr.H-2) continue;
+    var anc = X2>pr.W*0.74?'end':(X2<pr.W*0.12?'start':'middle');
+    var dxv = anc==='middle'?0:(anc==='end'?-7:7);
+    s+='<circle cx="'+X2.toFixed(1)+'" cy="'+Y2.toFixed(1)+'" r="4.2" fill="'+C.card+'" stroke="'+C.ink+'" stroke-width="1.6"/>';
+    s+='<text x="'+(X2+dxv).toFixed(1)+'" y="'+(Y2-11).toFixed(1)+'" text-anchor="'+anc+'" font-size="12.5" font-weight="700" fill="'+C.ink+'" '
+      +'stroke="'+C.card+'" stroke-width="3.4" paint-order="stroke">'+p3.n+'</text>';
+    if(p3.alt) s+='<text x="'+(X2+dxv).toFixed(1)+'" y="'+(Y2+2).toFixed(1)+'" text-anchor="'+anc+'" font-size="10.5" fill="'+C.muted+'" '
+      +'stroke="'+C.card+'" stroke-width="2.8" paint-order="stroke">'+p3.alt+'m</text>';
+  }
+  s+='</g></svg>';
+  var keep='';
+  for(var kc=0;kc<host.children.length;kc++){
+    var chl=host.children[kc];
+    if(chl.tagName && chl.tagName.toLowerCase()!=='svg') keep+=chl.outerHTML;
+  }
+  host.innerHTML=s+keep;
+}
+
+/* ---------- 渲染 ---------- */
+function buildOverview(){
+  var keysets=DAYS.map(function(d,i){
+    var route=d.route;
+    if(i===0) route=['cd','dy'];
+    if(i===4) route=['kd','cd'];
+    return {route:route,dash:false,color:cssv(d.c)};
+  });
+  keysets.push({route:['xdq','tg','hhz','zgw','kd'],dash:true,color:cssv('--d3')});
+  var lab=['dy','yx','mbl','sg','sqg','db','zl','bm','hys','msg','gn','tg','blsd','xdq','jgb','nti','hhz','kd','cd'];
+  drawMap(document.getElementById('ovMap'),keysets,lab,null,680);
+  var lg=document.getElementById('ovLegend'); lg.innerHTML='';
+  DAYS.forEach(function(d,i){
+    var b=document.createElement('button');
+    b.setAttribute('aria-pressed','false');
+    b.innerHTML='<span class="bar" style="background:'+cssv(d.c)+'"></span>Day'+d.id+' · '+d.date.replace(/（.*/,'');
+    b.onclick=function(){
+      var all=lg.querySelectorAll('button');
+      for(var q=0;q<all.length;q++) all[q].setAttribute('aria-pressed','false');
+      b.setAttribute('aria-pressed','true');
+      var el=document.getElementById('d'+d.id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+    lg.appendChild(b);
+  });
+}
+function buildTickets(){
+  var t='';
+  TICKETS.forEach(function(r){
+    var tag = r[2]==='need' ? '<span class="tagneed">需提前预约</span>'
+            : r[2]==='free' ? '<span class="tagfree">免费 · 无需预约</span>' : '';
+    t+='<tr><td><b>'+r[0]+'</b>'+tag+'</td><td class="pri">'+r[1]+'</td><td>'
+      +(r[2]==='need'?'要':(r[2]==='free'?'不用':'看情况'))+'</td><td style="color:var(--ink2)">'+r[3]+'</td></tr>';
+  });
+  document.getElementById('ticketRows').innerHTML=t;
+  var h='';
+  HOTELS.forEach(function(r){
+    h+='<tr><td>'+r[0]+'</td><td><b>'+r[1]+'</b></td><td class="pri">'+r[2]+'</td><td style="color:var(--muted)">'+r[3]+'</td></tr>';
+  });
+  document.getElementById('hotelRows').innerHTML=h;
+}
+function buildDays(){
+  var host=document.getElementById('days'), html='';
+  DAYS.forEach(function(d){
+    html+='<div class="day" id="d'+d.id+'" style="--c:'+cssv(d.c)+'">';
+    html+='<div class="day-h"><span class="d">Day '+d.id+' · '+d.date+'</span><span class="nm">'+d.meta+'</span><span class="r">'+d.title+'</span></div>';
+    html+='<div class="day-tools">'
+        +'<a class="btn p" target="_blank" rel="noopener" href="'+nav(d.from,d.dest,d.via)+'">今日全程导航（起点→途经→终点）</a>'
+        +'<button class="btn" data-day="'+d.id+'">展开当日路线地图</button></div>';
+    html+='<div class="mapwrap" id="mw'+d.id+'"><div class="inner" id="mi'+d.id+'"><div class="stops" id="st'+d.id+'"></div></div></div>';
+    d.rows.forEach(function(r){
+      var cls = r[4]==='warn' ? 'row warnrow' : (r[4]==='gold' ? 'row goldrow' : 'row');
+      html+='<div class="'+cls+'"><div class="tm">'+r[0]+'</div><div class="bd">'
+          +'<div class="hd">'+r[1]+(r[4]==='need'?'<span class="tagneed">需提前预约</span>':(r[4]==='free'?'<span class="tagfree">免费 · 无需预约</span>':''))+'</div>';
+      if(r[2]) html+='<div class="nt">'+r[2]+'</div>';
+      if(r[3] && r[3].length){
+        html+='<div class="acts">';
+        r[3].forEach(function(k){ if(P[k]) html+='<a class="btn" target="_blank" rel="noopener" href="'+to(k)+'">导航 · '+P[k].n+'</a>'; });
+        html+='</div>';
+      }
+      html+='</div></div>';
+    });
+    html+='</div>';
+  });
+  host.innerHTML=html;
+  DAYS.forEach(function(d){
+    var btn=document.querySelector('[data-day="'+d.id+'"]');
+    var wrap=document.getElementById('mw'+d.id);
+    var done=false;
+    if(!btn) return;
+    btn.onclick=function(){
+      wrap.classList.toggle('on');
+      if(!done){
+        var extra=[];
+        if(d.id===3) extra.push({route:['xdq','tg','hhz','zgw','kd'],dash:true,color:cssv('--d3')});
+        drawMap(document.getElementById('mi'+d.id), extra.concat([{route:d.route,dash:false,color:cssv(d.c)}]), d.labels, null, 620);
+        var st=document.getElementById('st'+d.id), shtml='', seen={};
+        d.route.forEach(function(k){
+          if(seen[k]||!P[k]) return; seen[k]=1;
+          shtml+='<a class="chip" target="_blank" rel="noopener" href="'+to(k)+'">'+P[k].n+' ›</a>';
+        });
+        if(d.id===3){ ['hhz','zgw'].forEach(function(k){ if(!seen[k]) shtml+='<a class="chip" target="_blank" rel="noopener" href="'+to(k)+'">'+P[k].n+'（方案B）›</a>'; }); }
+        if(st) st.innerHTML=shtml;
+        done=true;
+      }
+      btn.textContent = wrap.classList.contains('on') ? '收起当日路线地图' : '展开当日路线地图';
+    };
+  });
+}
+function buildTodo(){
+  var h='';
+  TODO.forEach(function(r){ h+='<li><span class="dl">'+r[0]+'</span><span>'+r[1]+'</span></li>'; });
+  document.getElementById('todo').innerHTML=h;
+}
+function buildTips(){
+  var host=document.getElementById('tips'), h='';
+  TIPS.forEach(function(t){
+    h+='<details class="acc card"'+(t.open?' open':'')+'><summary>'+t.t+'</summary><div class="bd"><ul>';
+    t.b.forEach(function(x){ h+='<li>'+x+'</li>'; });
+    h+='</ul></div></details>';
+  });
+  host.innerHTML=h;
+}
+
+buildTickets(); buildDays(); buildTodo(); buildTips(); buildOverview();
+tick(); setInterval(tick,1000);
+try{
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  var onTheme=function(){ buildOverview();
+    DAYS.forEach(function(d){ if(document.getElementById('mw'+d.id).classList.contains('on')) {
+      var extra=[]; if(d.id===3) extra.push({route:['xdq','tg','hhz','zgw','kd'],dash:true,color:cssv('--d3')});
+      drawMap(document.getElementById('mi'+d.id), extra.concat([{route:d.route,dash:false,color:cssv(d.c)}]), d.labels, null, 620);
+    }});
+  };
+  if(mq.addEventListener) mq.addEventListener('change',onTheme);
+}catch(e){}
+</script>
+</body>
+</html>
